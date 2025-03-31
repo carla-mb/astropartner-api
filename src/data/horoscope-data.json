@@ -1,0 +1,26 @@
+[
+  {
+    "zodiacSign": "aries",
+    "messages": [
+      "New beginnings are important, but don't lose your appreciation for old connections.",
+      "Stop examining the group tension so closely -- and try to put it out of your mind.",
+      "Decide to be compassionate around people you don't like. They deserve some respect."
+    ],
+    "dates": "From 21/03 to 19/04",
+    "element": "Fire",
+    "rulingPlanet": "Mars",
+    "traits": ["Adventurous", "Courageous", "Impulsive"]
+  },
+  {
+    "zodiacSign": "taurus",
+    "messages": [
+      "Be open-minded and watch for signs today -- they won't look like how you expect.",
+      "You'll spend a lot of time today daydreaming, but it will be time well spent!",
+      "You can make yourself start feeling good -- as soon as you start thinking good!"
+    ],
+    "dates": "From 20/04 to 20/05",
+    "element": "Earth",
+    "rulingPlanet": "Venus",
+    "traits": ["Reliable", "Stubborn", "Patient"]
+  }
+]

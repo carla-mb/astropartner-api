@@ -5,6 +5,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { UsersModule } from './users/users.module';
 import { AuthModule } from './auth/auth.module';
+import { HoroscopeModule } from './horoscope/horoscope.module';
 
 @Module({
   imports: [
@@ -23,7 +24,7 @@ import { AuthModule } from './auth/auth.module';
       logging: process.env.NODE_ENV === 'development',
     }),
     UsersModule, 
-    AuthModule
+    AuthModule, HoroscopeModule
   ],
   controllers: [AppController],
   providers: [AppService],
