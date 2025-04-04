@@ -1,5 +1,6 @@
 import * as bcrypt from 'bcrypt';
-import { Entity, PrimaryGeneratedColumn, Column, BeforeInsert, BeforeUpdate } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, BeforeInsert, BeforeUpdate, OneToMany } from 'typeorm';
+import { PostEntity } from 'src/posts/post.entity';
 
 // UserEntity represents a user in the database
 @Entity('users')
@@ -34,4 +35,13 @@ export class UserEntity {
       this.password = await bcrypt.hash(this.password, salt);
     }
   }
+
+  // Compare user's password with stored hashed password
+  async validatePassword(password: string): Promise<boolean> {
+    return bcrypt.compare(password, this.password);
+  }
+
+  // Relation: a user can have multiple posts
+  @OneToMany(() => PostEntity, post => post.user)
+  posts: PostEntity[];
 }

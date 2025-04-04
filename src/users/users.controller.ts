@@ -59,4 +59,12 @@ export class UsersController {
   ): Promise<void> {
     return this.usersService.deleteUser(userId, authenticatedId);
   }
+
+  // Get all posts by a user
+  @Get(':id/posts')
+  @ApiBearerAuth('access_token')
+  @UseGuards(AuthGuard('jwt'))
+  getPostsByUser(@Param('id', ValidUserIdPipe) userId: string) {
+    return this.usersService.getPostsByUser(userId);
+  }
 }

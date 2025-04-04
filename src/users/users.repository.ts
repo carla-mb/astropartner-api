@@ -3,12 +3,15 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { UserEntity } from './user.entity';
 import { UserDto } from './user.dto';
+import { PostEntity } from 'src/posts/post.entity';
 
 @Injectable()
 export class UsersRepository {
   constructor(
     @InjectRepository(UserEntity)
     private usersRepository: Repository<UserEntity>,
+    @InjectRepository(PostEntity)
+    private postsRepository: Repository<PostEntity>,
   ) {}
 
   // Check if username already exists
@@ -54,5 +57,12 @@ export class UsersRepository {
   // Delete a user by ID
   async deleteUser(userId: string): Promise<void> {
     await this.usersRepository.delete(userId);
+  }
+
+  // Retrieve all posts by a specific user
+  async getPostsByUser(userId: string): Promise<PostEntity[]> {
+    return await this.postsRepository.find({ 
+      where: { userId } 
+    });
   }
 }

@@ -4,6 +4,7 @@ import { UserDto } from './user.dto';
 import { UserEntity } from './user.entity';
 import { UserMapper } from './user.mapper';
 import { UsersRepository } from './users.repository';
+import { PostEntity } from 'src/posts/post.entity';
 
 @Injectable()
 export class UsersService {
@@ -102,5 +103,10 @@ export class UsersService {
       throw new Error('You are not authorized to delete this user');
     }
     await this.usersRepository.deleteUser(userId);
+  }
+
+  // Retrieve all posts by a specific user
+  async getPostsByUser(userId: string): Promise<PostEntity[]> {
+    return await this.usersRepository.getPostsByUser(userId);
   }
 }
