@@ -3,6 +3,7 @@ import { ApiBearerAuth } from '@nestjs/swagger';
 import { AuthGuard } from '@nestjs/passport';
 import { PostsService } from './posts.service';
 import { PostDto } from './post.dto';
+import { CommentDto } from 'src/comments/comment.dto';
 import { ValidPostIdPipe } from './pipes/valid-post-id.pipe';
 import { GetUser } from 'src/auth/decorators/get-user.decorator';
 
@@ -60,5 +61,24 @@ export class PostsController {
     @GetUser('userId') userId: string
   ): Promise<void> {
     return await this.postsService.deletePost(postId, userId);
+  }
+
+  // Retrieve all comments for a specific post
+  @Get(':id/comments')
+  async getCommentsByPostId(@Param('id', ValidPostIdPipe) postId: string) {
+    return this.postsService.getCommentsByPostId(postId);
+  }
+
+  // Create a new comment for a specific post (requires authentication)
+  @Post(':postId/comments')
+  @ApiBearerAuth('access_token')
+  @UseGuards(AuthGuard('jwt'))
+  async addCommentToPost(
+    @Param('postId', ValidPostIdPipe) postId: string,
+    @Body() commentDto: CommentDto,
+    @GetUser('userId') userId: string,
+  ): Promise<CommentDto> {
+    // Pass the comment data to the CommentsService via PostsService
+    return await this.postsService.addCommentToPost(postId, userId, commentDto);
   }
 }

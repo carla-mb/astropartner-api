@@ -3,12 +3,16 @@ import { PostDto } from './post.dto';
 import { PostEntity } from './post.entity';
 import { PostMapper } from './post.mapper';
 import { PostsRepository } from './posts.repository';
+import { CommentDto } from 'src/comments/comment.dto';
+import { CommentsService } from 'src/comments/comments.service';
+import { CommentEntity } from 'src/comments/comment.entity';
 
 @Injectable()
 export class PostsService {
   constructor(
     private postsRepository: PostsRepository,
     private postMapper: PostMapper,
+    private readonly commentsService: CommentsService,
   ) {}
 
   // Retrieve all posts and convert to DTOs
@@ -50,5 +54,20 @@ export class PostsService {
     }
   
     await this.postsRepository.deletePost(postId);
+  }
+
+  // Retrieve all comments for a specific post
+  async getCommentsByPostId(postId: string): Promise<CommentEntity[]> {
+    return await this.postsRepository.getCommentsByPostId(postId);
+  }
+
+  // Create a new comment for a specific post
+  async addCommentToPost(postId: string, userId: string, commentDto: CommentDto): Promise<CommentDto> {
+    // Associate the user ID and post ID with the comment
+    commentDto.postId = postId;
+    commentDto.userId = userId;
+
+    // Delegate to CommentsService
+    return await this.commentsService.newComment(commentDto);
   }
 }

@@ -1,5 +1,6 @@
 import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn, OneToMany } from 'typeorm';
 import { UserEntity } from 'src/users/user.entity';
+import { CommentEntity } from 'src/comments/comment.entity';
 
 // PostEntity represents a post in the database
 @Entity('posts')
@@ -24,4 +25,8 @@ export class PostEntity {
   @ManyToOne(() => UserEntity, (user) => user.posts, { onDelete: 'CASCADE' })
   @JoinColumn({ name: 'userId' })
   user: UserEntity;
+
+  // Relation: a post can have multiple comments
+  @OneToMany(() => CommentEntity, comment => comment.post)
+  comments: CommentEntity[];
 }

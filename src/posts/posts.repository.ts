@@ -3,12 +3,15 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { PostEntity } from './post.entity';
 import { PostDto } from './post.dto';
+import { CommentEntity } from 'src/comments/comment.entity';
 
 @Injectable()
 export class PostsRepository {
   constructor(
     @InjectRepository(PostEntity)
     private postsRepository: Repository<PostEntity>,
+    @InjectRepository(CommentEntity)
+    private commentsRepository: Repository<CommentEntity>
   ) {}
 
   // Retrieve all posts
@@ -40,5 +43,17 @@ export class PostsRepository {
   // Delete a post
   async deletePost(postId: string): Promise<void> {
     await this.postsRepository.delete(postId);
+  }
+
+  // Retrieve all comments for a specific post
+  async getCommentsByPostId(postId: string): Promise<CommentEntity[]> {
+    return await this.commentsRepository.find({
+      where: { postId }
+    });
+  }
+
+  // Create a new comment for a specific post
+  async addCommentToPost(comment: CommentEntity): Promise<CommentEntity> {
+    return await this.commentsRepository.save(comment);
   }
 }

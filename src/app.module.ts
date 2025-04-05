@@ -7,6 +7,7 @@ import { UsersModule } from './users/users.module';
 import { AuthModule } from './auth/auth.module';
 import { HoroscopeModule } from './horoscope/horoscope.module';
 import { PostsModule } from './posts/posts.module';
+import { CommentsModule } from './comments/comments.module';
 
 @Module({
   imports: [
@@ -25,7 +26,7 @@ import { PostsModule } from './posts/posts.module';
       logging: process.env.NODE_ENV === 'development',
     }),
     UsersModule, 
-    AuthModule, HoroscopeModule, PostsModule
+    AuthModule, HoroscopeModule, PostsModule, CommentsModule
   ],
   controllers: [AppController],
   providers: [AppService],
