@@ -2,6 +2,7 @@ import * as bcrypt from 'bcrypt';
 import { Entity, PrimaryGeneratedColumn, Column, BeforeInsert, BeforeUpdate, OneToMany } from 'typeorm';
 import { PostEntity } from 'src/posts/post.entity';
 import { CommentEntity } from 'src/comments/comment.entity';
+import { EventEntity } from 'src/events/event.entity';
 
 // UserEntity represents a user in the database
 @Entity('users')
@@ -49,4 +50,8 @@ export class UserEntity {
   // Relation: a user can have multiple comments
   @OneToMany(() => CommentEntity, comment => comment.user)
   comments: CommentEntity[];
+
+  // Relation: a user can have multiple events
+  @OneToMany(() => EventEntity, event => event.user)
+  events: EventEntity[];
 }

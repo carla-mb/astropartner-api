@@ -4,6 +4,7 @@ import { Repository } from 'typeorm';
 import { UserEntity } from './user.entity';
 import { UserDto } from './user.dto';
 import { PostEntity } from 'src/posts/post.entity';
+import { EventEntity } from 'src/events/event.entity';
 
 @Injectable()
 export class UsersRepository {
@@ -12,6 +13,8 @@ export class UsersRepository {
     private usersRepository: Repository<UserEntity>,
     @InjectRepository(PostEntity)
     private postsRepository: Repository<PostEntity>,
+    @InjectRepository(EventEntity)
+    private eventsRepository: Repository<EventEntity>,
   ) {}
 
   // Check if username already exists
@@ -62,6 +65,13 @@ export class UsersRepository {
   // Retrieve all posts by a specific user
   async getPostsByUser(userId: string): Promise<PostEntity[]> {
     return await this.postsRepository.find({ 
+      where: { userId } 
+    });
+  }
+
+  // Retrieve all events by a specific user
+  async getEventsByUser(userId: string): Promise<EventEntity[]> {
+    return await this.eventsRepository.find({ 
       where: { userId } 
     });
   }

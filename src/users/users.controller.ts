@@ -67,4 +67,12 @@ export class UsersController {
   getPostsByUser(@Param('id', ValidUserIdPipe) userId: string) {
     return this.usersService.getPostsByUser(userId);
   }
+
+  // Get all events by a user
+  @Get(':id/events')
+  @ApiBearerAuth('access_token')
+  @UseGuards(AuthGuard('jwt'))
+  getEventsByUser(@Param('id', ValidUserIdPipe) userId: string) {
+    return this.usersService.getEventsByUser(userId);
+  }
 }

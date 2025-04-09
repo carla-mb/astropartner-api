@@ -7,10 +7,13 @@ import { UserEntity } from './user.entity';
 import { UserMapper } from './user.mapper';
 import { PostsModule } from 'src/posts/posts.module';
 import { PostEntity } from 'src/posts/post.entity';
+import { EventEntity } from 'src/events/event.entity';
+import { EventsModule } from 'src/events/events.module';
 
 @Module({
-  imports: [TypeOrmModule.forFeature([UserEntity, PostEntity]),
-  PostsModule
+  imports: [TypeOrmModule.forFeature([UserEntity, PostEntity, EventEntity]),
+  PostsModule,
+  EventsModule
   ],
   providers: [
     UsersService,

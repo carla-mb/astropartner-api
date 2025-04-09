@@ -5,6 +5,7 @@ import { UserEntity } from './user.entity';
 import { UserMapper } from './user.mapper';
 import { UsersRepository } from './users.repository';
 import { PostEntity } from 'src/posts/post.entity';
+import { EventEntity } from 'src/events/event.entity';
 
 @Injectable()
 export class UsersService {
@@ -108,5 +109,10 @@ export class UsersService {
   // Retrieve all posts by a specific user
   async getPostsByUser(userId: string): Promise<PostEntity[]> {
     return await this.usersRepository.getPostsByUser(userId);
+  }
+
+  // Retrieve all events by a specific user
+  async getEventsByUser(userId: string): Promise<EventEntity[]> {
+    return await this.usersRepository.getEventsByUser(userId);
   }
 }
