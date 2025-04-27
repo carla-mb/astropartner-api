@@ -9,6 +9,7 @@ import { HoroscopeModule } from './horoscope/horoscope.module';
 import { PostsModule } from './posts/posts.module';
 import { CommentsModule } from './comments/comments.module';
 import { EventsModule } from './events/events.module';
+import { MoonModule } from './moon/moon.module';
 
 @Module({
   imports: [
@@ -27,7 +28,7 @@ import { EventsModule } from './events/events.module';
       logging: process.env.NODE_ENV === 'development',
     }),
     UsersModule, 
-    AuthModule, HoroscopeModule, PostsModule, CommentsModule, EventsModule
+    AuthModule, HoroscopeModule, PostsModule, CommentsModule, EventsModule, MoonModule
   ],
   controllers: [AppController],
   providers: [AppService],
