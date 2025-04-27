@@ -2,7 +2,7 @@
   {
     "zodiacSign": "aries",
     "messages": [
-      "New beginnings are important, but don't lose your appreciation for old connections.",
+      "By living a generous life, you become an inspiration to the people around you. Someone in your social circle who's known for being inflexible is suddenly realizing that they aren't the only person on earth. Your good example is part of the reason they're changing!",
       "Stop examining the group tension so closely -- and try to put it out of your mind.",
       "Decide to be compassionate around people you don't like. They deserve some respect."
     ],
@@ -15,12 +15,132 @@
     "zodiacSign": "taurus",
     "messages": [
       "Be open-minded and watch for signs today -- they won't look like how you expect.",
-      "You'll spend a lot of time today daydreaming, but it will be time well spent!",
+      "If you think you can fake it when it comes to an intimidating situation, you're way off base! You can't bluff your way through things right now, so don't try. It's wisest if you just admit to any anxieties or insecurities you have up front. If you let everyone involved know that you feel like a fish out of water, they'll respect you for it.",
       "You can make yourself start feeling good -- as soon as you start thinking good!"
     ],
     "dates": "From 20/04 to 20/05",
     "element": "Earth",
     "rulingPlanet": "Venus",
     "traits": ["Reliable", "Stubborn", "Patient"]
+  },
+  {
+    "zodiacSign": "gemini",
+    "messages": [
+      "Make sure you finish old projects before you go off starting anything new today.",
+      "The future holds some battles for you. You must use today to get in fighting shape.",
+      "As illogical as it sounds, a heavy mood can be lightened by heavy thoughts. If you face whatever is troubling you head-on and process it with as much honesty as you can, your worries will eventually fade away to nothing."
+    ],
+    "dates": "From 21/05 to 20/06",
+    "element": "Air",
+    "rulingPlanet": "Mercury",
+    "traits": ["Curious", "Adaptable", "Communicative"]
+  },
+  {
+    "zodiacSign": "cancer",
+    "messages": [
+      "Moving from place to place will be effortless for you. You are in an extremely flexible phase right now, and to top it off, the universe is moving in such a way that all the pieces are falling into place right where you need them.",
+      "Don't show that you have doubt in what you are doing today -- even if you do!",
+      "Your gut won't help you out when it comes to money! Research the facts today."
+    ],
+    "dates": "From 21/06 to 22/07",
+    "element": "Water",
+    "rulingPlanet": "Moon",
+    "traits": ["Empathetic", "Protective", "Intuitive"]
+  },
+  {
+    "zodiacSign": "leo",
+    "messages": [
+      "Try to add more exercise to your daily routine. Your physical self is something you can control a lot more than your emotional self right now, so you might as well make the best of it.",
+      "From the very start of your day, you could be picking up on all the energy of people around you. Sadness, happiness, anger, terror, all of these diverse emotions will be coming at you today.",
+      "You'll spend a lot of time today daydreaming, but it will be time well spent!"
+    ],
+    "dates": "From 23/07 to 22/08",
+    "element": "Fire",
+    "rulingPlanet": "Sun",
+    "traits": ["Charismatic", "Confident", "Passionate"]
+  },
+  {
+    "zodiacSign": "virgo",
+    "messages": [
+      "Your attitude about yourself is going through some changes right now, and it's almost like you're getting to know yourself all over again. This process of getting comfortable with new aspects of your personality isn't always the greatest experience, but it's necessary for improving your confidence.",
+      "Attending a family gathering could give you a fresh perspective on where you want to take your life. It seems that stories from the past are great places to find inspiration for your future. Try not to hide your newest developments from family members.",
+      "New beginnings are important, but don't lose your appreciation for old connections."
+    ],
+    "dates": "From 23/08 to 22/09",
+    "element": "Earth",
+    "rulingPlanet": "Mercury",
+    "traits": ["Analytical", "Practical", "Reliable"]
+  },
+  {
+    "zodiacSign": "libra",
+    "messages": [
+      "It won't be difficult for you to make friends today! Your values are appreciated.",
+      "Even though you love them dearly, your family isn't totally in sync with you right now. Don't be surprised if you have a hard time communicating with them. Stop thinking so hard about how to reach them and just start saying what you truly want. It may be difficult, but you should come clean with what you're feeling.",
+      "Be open-minded and watch for signs today -- they won't look like how you expect."
+    ],
+    "dates": "From 23/09 to 22/10",
+    "element": "Air",
+    "rulingPlanet": "Venus",
+    "traits": ["Diplomatic", "Fair-minded", "Charming"]
+  },
+  {
+    "zodiacSign": "scorpio",
+    "messages": [
+      "There is no time like the present to get started on your future! Make a plan today.",
+      "You can be as flexible as a rubber band all day long if you want, but if the people you're dealing with remain rigid, it won't matter how stretchy you are. Unfortunately, the headway you make today depends on other people. The good news is that you can choose who you spend time with.",
+      "Why be shy today when being loud and proud is so much more fun? The people you meet today aren't interested in good manners. They're interested in engaging ideas, and you have a lot of them! Don't sell yourself short or let yourself be overlooked. Stand up and be counted!"
+    ],
+    "dates": "From 23/10 to 21/11",
+    "element": "Water",
+    "rulingPlanet": "Pluto",
+    "traits": ["Intense", "Passionate", "Resourceful"]
+  },
+  {
+    "zodiacSign": "sagittarius",
+    "messages": [
+      "Things are just not going to go the way you want them today, but it's a good thing.",
+      "Be extremely wary of an extravagant gesture from a person who's usually frugal and unassuming. Unless they've recently come into lottery winnings, they might be trying to overcompensate for guilt or some other negative feeling. Get some time with them today to find out what really motivated their generosity.",
+      "Spice up your day by making a connection with a stranger -- go on and smile!"
+    ],
+    "dates": "From 22/11 to 21/12",
+    "element": "Fire",
+    "rulingPlanet": "Jupiter",
+    "traits": ["Optimistic", "Adventurous", "Philosophical"]
+  },
+  {
+    "zodiacSign": "capricorn",
+    "messages": [
+      "Don't be too surprised if others in your work or school life start looking to you for answers today. You have a reputation for knowing what you're doing, and word of your competence is spreading like wildfire. Resist merely giving them the correct answer. You'll only encourage them to stop thinking for themselves. Instead, try to help these people find their own answers.",
+      "Let your mischievous side come out to play for a little while today -- have fun.",
+      "In any and all confrontations you have today, be sure to take the high road. Let aggressive drivers zoom right by you, and simply smile if someone tries to blame you for something they did. Your maturity is more than enough of an antidote to whatever poison is in the air today. Refusing to fly off the handle emotionally will enable you to understand what you're feeling all the better. Try to keep a more impersonal point of view about things right now."
+    ],
+    "dates": "From 22/12 to 19/01",
+    "element": "Earth",
+    "rulingPlanet": "Saturn",
+    "traits": ["Disciplined", "Ambitious", "Responsible"]
+  },
+  {
+    "zodiacSign": "aquarius",
+    "messages": [
+      "It's a good idea to reexamine your toughest goal today -- it is too unrealistic.",
+      "If you want to put one of your innovative ideas into action right now, you have to be open to the possibility of asking for help from someone in a higher position than you. This doesn't necessarily mean that you need to ask a teacher or supervisor for assistance; just talk to someone who has a bit more power than you do.",
+      "You can be as flexible as a rubber band all day long if you want, but if the people you're dealing with remain rigid, it won't matter how stretchy you are. Unfortunately, the headway you make today depends on other people. The good news is that you can choose who you spend time with. Feel free to refuse invitations from the people who you know are going to want to do things their way."
+    ],
+    "dates": "From 20/01 to 18/02",
+    "element": "Air",
+    "rulingPlanet": "Uranus",
+    "traits": ["Innovative", "Independent", "Humanitarian"]
+  },
+  {
+    "zodiacSign": "pisces",
+    "messages": [
+      "New beginnings are important, but don't lose your appreciation for old connections.",
+      "Give yourself a break later in the day. Make sure there's time to just do nothing.",
+      "Try to add more exercise to your daily routine. Your physical self is something you can control a lot more than your emotional self right now, so you might as well make the best of it. Your body is under your control, so what do you want it to do? Take note of what you're putting into it, what you're putting it through, and what you're expecting from it. If all three of those things don't add up, it's time for you to make a change."
+    ],
+    "dates": "From 19/02 to 20/03",
+    "element": "Water",
+    "rulingPlanet": "Neptune",
+    "traits": ["Empathetic", "Artistic", "Intuitive"]
   }
 ]
