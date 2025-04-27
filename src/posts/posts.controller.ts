@@ -19,8 +19,6 @@ export class PostsController {
 
   // Get post by ID (requires authentication)
   @Get(':id')
-  @ApiBearerAuth('access_token')
-  @UseGuards(AuthGuard('jwt'))
   async getPostById(
     @Param('id', ValidPostIdPipe) postId: string
   ): Promise<PostDto> {

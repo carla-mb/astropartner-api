@@ -6,6 +6,7 @@ import { UserMapper } from './user.mapper';
 import { UsersRepository } from './users.repository';
 import { PostEntity } from 'src/posts/post.entity';
 import { EventEntity } from 'src/events/event.entity';
+import { BadRequestException } from '@nestjs/common';
 
 @Injectable()
 export class UsersService {
@@ -20,10 +21,15 @@ export class UsersService {
     return users.map(user => this.userMapper.entityToDto(user));
   }
   
-   // Retrieve user by ID and convert to DTO
-  async getUserById(userId: string): Promise<UserDto> {
-    const user: UserEntity = await this.usersRepository.getUserById(userId);
-    return this.userMapper.entityToDto(user);
+  // Retrieve user by ID and exclude the password field
+  async getUserById(userId: string): Promise<Omit<UserDto, 'password'>> {
+   const user: UserEntity = await this.usersRepository.getUserById(userId);
+    return {
+      userId: user.userId,
+      username: user.username,
+      birthDate: user.birthDate,
+      zodiacSign: user.zodiacSign,
+    };
   }
 
   // Find user by username
@@ -69,7 +75,7 @@ export class UsersService {
   async newUser(userDto: UserDto): Promise<UserDto> {
     const usernameExists = await this.usernameAlreadyExists(userDto.username);
     if (usernameExists) {
-      throw new Error('Username already exists');
+      throw new BadRequestException('Username already exists');
     }
 
     // Compute zodiac sign based on birth date
@@ -81,22 +87,30 @@ export class UsersService {
 
   // Update an existing user and convert to DTO
   async updateUser(userId: string, userDto: UserDto, authenticatedId: string): Promise<UserDto> {
-    // Validate ownership
     if (userId !== authenticatedId) {
       throw new Error('You are not authorized to update this user');
     }
-    
+  
     const currentUser = await this.usersRepository.getUserById(userId);
-    userDto.zodiacSign = this.computeZodiacSign(new Date(userDto.birthDate));
-    
-    // Update password only if it's different
-    if (!userDto.password || await bcrypt.compare(userDto.password, currentUser.password)) {
-      userDto.password = currentUser.password;
-    }
 
-    const updatedUser = await this.usersRepository.updateUser(userId, userDto);
+    if (userDto.username !== currentUser.username) {
+      const existingUser = await this.usersRepository.getUserByUsername(userDto.username).catch(() => null);
+      if (existingUser) {
+        throw new BadRequestException('Username already exists');
+      }
+    }
+  
+    // Overwrite values — including raw password
+    currentUser.username = userDto.username;
+    currentUser.password = userDto.password; // May be plain — entity will hash it if needed
+    currentUser.birthDate = new Date(userDto.birthDate);
+    currentUser.zodiacSign = this.computeZodiacSign(currentUser.birthDate);
+  
+    const updatedUser = await this.usersRepository.updateUser(userId, currentUser);
+  
     return this.userMapper.entityToDto(updatedUser);
-  }  
+  }
+  
 
   // Delete a user
   async deleteUser(userId: string, authenticatedId: string): Promise<void> {

@@ -13,19 +13,9 @@ export class UsersController {
     private usersService: UsersService,
   ) {}
 
-  // Get all users (requires authentication)
-  @Get()
-  @ApiBearerAuth('access_token')
-  @UseGuards(AuthGuard('jwt'))
-  async getAllUsers(): Promise<UserDto[]> {
-    return this.usersService.getAllUsers();
-  }
-
   // Get user by ID (requires authentication)
   @Get(':id')
-  @ApiBearerAuth('access_token')
-  @UseGuards(AuthGuard('jwt'))
-  async getUserById(@Param('id', ValidUserIdPipe) userId: string): Promise<UserDto> {
+  async getUserById(@Param('id', ValidUserIdPipe) userId: string): Promise<Omit<UserDto, 'password'>> {
     return this.usersService.getUserById(userId);
   }
 
