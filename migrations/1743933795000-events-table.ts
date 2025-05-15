@@ -12,6 +12,7 @@ export class eventsTable1743933795000 implements MigrationInterface {
         "title" character varying(255) NOT NULL,
         "start" TIMESTAMP NOT NULL,
         "end" TIMESTAMP NOT NULL,
+        "color" character varying(7) NOT NULL DEFAULT '#9357c7',
         CONSTRAINT "PK_events_eventId" PRIMARY KEY ("eventId"),
         CONSTRAINT "FK_events_userId" FOREIGN KEY ("userId") REFERENCES "users"("userId") ON DELETE CASCADE
       );

@@ -13,6 +13,7 @@ export class EventMapper {
       title: eventEntity.title,
       start: eventEntity.start,
       end: eventEntity.end,
+      color: eventEntity.color,
     };
   }
 
@@ -23,6 +24,7 @@ export class EventMapper {
     event.title = eventDto.title;
     event.start = new Date(eventDto.start);
     event.end = new Date(eventDto.end);
+    event.color = eventDto.color;
     return event;
   }
 }

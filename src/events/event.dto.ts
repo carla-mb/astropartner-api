@@ -15,4 +15,7 @@ export class EventDto {
 
   @ApiProperty()
   end: Date;
+
+  @ApiProperty({ default: '#9357c7', required: false })
+  color: string;
 }

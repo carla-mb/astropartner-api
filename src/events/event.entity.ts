@@ -19,6 +19,9 @@ export class EventEntity {
   @Column({ type: 'timestamp' })
   end: Date;
 
+  @Column({ type: 'varchar', length: 7, default: '#9357c7' })
+  color: string;
+
   // Relation: each event is tied to one user
   // If user is deleted, associated events are removed
   @ManyToOne(() => UserEntity, { onDelete: 'CASCADE' })
