@@ -25,6 +25,26 @@
 
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
+## Configuration
+
+Before running the project, set up a PostgreSQL database.
+ 
+Create a `.env` file in the root folder of the project, and add all the necessary environment variables in the following format:
+
+```bash
+# Environment variables for the created local database
+DB_DATABASE=your_database_name
+DB_HOST=localhost
+DB_PORT=5432
+DB_USERNAME=your_username
+DB_PASSWORD=your_password
+
+# Additional environment variables
+JWT_SECRET=your_jwt_secret
+WEATHER_API_KEY=your_weather_api_key
+```
+Note: You need to create an account at [Weather API](https://www.visualcrossing.com/resources/documentation/weather-api/timeline-weather-api/) to obtain your API key.
+
 ## Project setup
 
 ```bash
